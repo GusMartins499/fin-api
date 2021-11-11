@@ -125,4 +125,19 @@ app.post("/withdraw", (request, response) => {
   return response.status(201).send();
 });
 
+app.delete("/delete", (request, response) => {
+  const { customer } = request;
+
+  customers.splice(customer, 1);
+
+  return response.status(200).json(customers);
+});
+
+app.get("/balance", (request, response) => {
+  const { customer } = request;
+  const balance = getBalance(customer.statement);
+
+  return response.json(balance);
+});
+
 app.listen(3333, () => console.log("🚀 Server started at port 3333"));
