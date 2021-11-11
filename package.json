@@ -7,7 +7,8 @@
     "dev": "yarn nodemon --exec babel-node src/server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
